@@ -1,0 +1,65 @@
+/* DigitalClock.css */
+
+.clock-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #1e1e1e;
+    transition: background-color 0.5s ease;
+}
+
+.clock {
+    font-size: 4rem;
+    color: #00ff7f;
+    font-family: 'Courier New', Courier, monospace;
+
+    background-color: #333;
+    padding: 20px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.clock:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 255, 127, 0.6), 0 0 20px rgba(0, 255, 127, 0.6);
+}
+
+@keyframes pulseGlow {
+
+    0%,
+    100% {
+        box-shadow: 0 0 10px rgba(0, 255, 127, 0.5), 0 0 30px rgba(0, 255, 127, 0.3);
+    }
+
+    50% {
+        box-shadow: 0 0 20px rgba(0, 255, 127, 0.7), 0 0 60px rgba(0, 255, 127, 0.5);
+    }
+}
+
+.clock {
+    animation: pulseGlow 2s infinite;
+}
+
+.clock-container:hover {
+    background-color: #121212;
+}
+
+@keyframes textGlow {
+
+    0%,
+    100% {
+        color: #00ff7f;
+    }
+
+    50% {
+        color: #00e67f;
+    }
+}
+
+.clock {
+    animation: pulseGlow 2s infinite, textGlow 3s infinite;
+}
